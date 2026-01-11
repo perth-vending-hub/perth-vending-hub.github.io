@@ -10,64 +10,109 @@ setInterval(() => {
 }, 600);
 
 // =============================
-// Multi-image carousel strip
+// 4 Single-image Carousels
 // =============================
 
-// IMPORTANT: Browsers cannot auto-read folder contents.
-// You must list filenames here:
-const carouselImages = [
-  "carousel_images/tile (1).png",
-  "carousel_images/tile (2).png",
-  "carousel_images/tile (3).png",
-  "carousel_images/tile (4).png",
-  "carousel_images/tile (5).png",
-  "carousel_images/tile (6).png",
-  "carousel_images/tile (7).png",
-  "carousel_images/tile (8).png",
-  "carousel_images/tile (9).png",
-  "carousel_images/tile (10).png",
-  "carousel_images/tile (11).png",
-  "carousel_images/tile (12).png"
-];
+// Put images into folders like:
+// carousel_images/drinks/...
+// carousel_images/snacks/...
+// carousel_images/icecream/...
+// carousel_images/gacha/...
 
-const track = document.getElementById("carouselTrack");
-const prevBtn = document.getElementById("carouselPrev");
-const nextBtn = document.getElementById("carouselNext");
+// Update these lists to your real filenames:
+const carouselGroups = {
+  drinks: [
+    "carousel_images/drinks/1.png",
+    "carousel_images/drinks/2.png"
+  ],
+  snacks: [
+    "carousel_images/snacks/1.png",
+    "carousel_images/snacks/2.png",
+    "carousel_images/snacks/3.png"
+  ],
+  icecream: [
+    "carousel_images/icecream/1.png",
+    "carousel_images/icecream/2.png",
+    "carousel_images/icecream/3.png"
+  ],
+  gacha: [
+    "carousel_images/gacha/1.png",
+    "carousel_images/gacha/2.png",
+    "carousel_images/gacha/3.png",
+    "carousel_images/gacha/4.png",
+    "carousel_images/gacha/5.png",
+    "carousel_images/gacha/6.png",
+    "carousel_images/gacha/7.png"
+  ]
+};
 
-// Safety checks (prevents errors if IDs not present)
-if (track && prevBtn && nextBtn) {
-  // Build items into the strip
-  carouselImages.forEach((src, idx) => {
-    const item = document.createElement("div");
-    item.className = "carousel-item";
+function initSingleCarousel(cardEl, images, autoPlayMs = 2800) {
+  if (!cardEl || !images || images.length === 0) return;
 
-    const img = document.createElement("img");
-    img.src = src;
-    img.alt = `Carousel image ${idx + 1}`;
-    img.loading = "lazy";
+  const imgEl = cardEl.querySelector(".carousel-image");
+  const prevBtn = cardEl.querySelector(".carousel-btn.prev");
+  const nextBtn = cardEl.querySelector(".carousel-btn.next");
+  const dotsContainer = cardEl.querySelector(".carousel-dots");
 
-    item.appendChild(img);
-    track.appendChild(item);
+  let currentIndex = 0;
+  let timer = null;
+
+  // Dots
+  dotsContainer.innerHTML = "";
+  const dotEls = images.map((_, idx) => {
+    const dot = document.createElement("button");
+    dot.addEventListener("click", () => goTo(idx));
+    dotsContainer.appendChild(dot);
+    return dot;
   });
 
-  // Scroll by ~one screen
-  function scrollByPage(direction) {
-    const amount = track.clientWidth * 0.9;
-    track.scrollBy({ left: direction * amount, behavior: "smooth" });
+  function render() {
+    imgEl.style.opacity = "0";
+    setTimeout(() => {
+      imgEl.src = images[currentIndex];
+      imgEl.style.opacity = "1";
+    }, 120);
+
+    dotEls.forEach((d, i) => d.classList.toggle("active", i === currentIndex));
   }
 
-  prevBtn.addEventListener("click", () => scrollByPage(-1));
-  nextBtn.addEventListener("click", () => scrollByPage(1));
+  function goTo(index) {
+    currentIndex = index;
+    render();
+  }
 
-  // Optional: mouse wheel scroll horizontally
-  track.addEventListener("wheel", (e) => {
-    // Convert vertical wheel to horizontal scroll
-    if (Math.abs(e.deltaY) > Math.abs(e.deltaX)) {
-      e.preventDefault();
-      track.scrollBy({ left: e.deltaY, behavior: "auto" });
-    }
-  }, { passive: false });
+  function next() {
+    currentIndex = (currentIndex + 1) % images.length; // loop
+    render();
+  }
 
-  // auto-scroll every 3 seconds (uncomment if you want)
-  setInterval(() => scrollByPage(1), 3000);
+  function prev() {
+    currentIndex = (currentIndex - 1 + images.length) % images.length;
+    render();
+  }
+
+  prevBtn.addEventListener("click", prev);
+  nextBtn.addEventListener("click", next);
+
+  // Autoplay + pause on hover
+  if (autoPlayMs && autoPlayMs > 0) {
+    timer = setInterval(next, autoPlayMs);
+
+    cardEl.addEventListener("mouseenter", () => {
+      if (timer) clearInterval(timer);
+      timer = null;
+    });
+
+    cardEl.addEventListener("mouseleave", () => {
+      if (!timer) timer = setInterval(next, autoPlayMs);
+    });
+  }
+
+  render();
 }
+
+// Init all 5
+document.querySelectorAll(".carousel-card").forEach((card) => {
+  const key = card.getAttribute("data-carousel");
+  initSingleCarousel(card, carouselGroups[key], 2600);
+});
