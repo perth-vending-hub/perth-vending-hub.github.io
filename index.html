@@ -3,142 +3,13 @@
 <head>
   <meta charset="UTF-8" />
   <title>Perth Vending Hub | Coming Soon</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <!-- Google Font -->
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
 
-  <style>
-    :root {
-      --pink: #ED2EA5;
-      --purple: #7f5cff;
-      --yellow: #FBC118;
-      --cyan: #2ff3ff;
-      --dark: #0b0b14;
-    }
-
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-      font-family: 'Orbitron', sans-serif;
-    }
-
-    body {
-     background: linear-gradient(180deg,#FBC118,#ED2EA5,#7f2cff);
-      color: white;
-      min-height: 100vh;
-      overflow-x: hidden;
-    }
-
-    /* HERO */
-    .hero {
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      justify-content: center;
-      padding: 80px 20px;
-      gap: 40px;
-    }
-
-    .hero img.hero-image {
-      max-width: 380px;
-      width: 100%;
-      border-radius: 18px;
-      box-shadow: 0 0 40px rgba(255,255,255,0.4);
-    }
-
-    .hero-content {
-      max-width: 520px;
-      text-align: center;
-    }
-
-    .logo {
-      width: 50%;
-      margin-bottom: 20px;
-    }
-
-    h1 {
-      font-size: 3rem;
-      letter-spacing: 4px;
-      text-shadow: 0 0 20px var(--cyan);
-    }
-
-    .coming-soon {
-      margin-top: 15px;
-      font-size: 1.2rem;
-      color: var(--yellow);
-      animation: pulse 2s infinite;
-    }
-
-    @keyframes pulse {
-      0% { opacity: 1; }
-      50% { opacity: 0.6; }
-      100% { opacity: 1; }
-    }
-
-    /* PRODUCTS */
-    .products {
-      background: rgba(0,0,0,0.4);
-      backdrop-filter: blur(10px);
-      padding: 60px 20px;
-      margin-top: 40px;
-    }
-
-    .products h2 {
-      text-align: center;
-      margin-bottom: 40px;
-      font-size: 2.2rem;
-      text-shadow: 0 0 15px var(--pink);
-    }
-
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 25px;
-      max-width: 1000px;
-      margin: auto;
-    }
-
-    .card {
-      background: linear-gradient(135deg, rgba(255,255,255,0.15), rgba(255,255,255,0.05));
-      border-radius: 16px;
-      padding: 30px 20px;
-      text-align: center;
-      box-shadow: 0 0 20px rgba(0,0,0,0.4);
-      transition: transform 0.3s, box-shadow 0.3s;
-    }
-
-    .card:hover {
-      transform: translateY(-8px) scale(1.03);
-      box-shadow: 0 0 30px var(--cyan);
-    }
-
-    .card span {
-      font-size: 2.5rem;
-      display: block;
-      margin-bottom: 15px;
-    }
-
-    .card h3 {
-      font-size: 1.2rem;
-      letter-spacing: 1px;
-    }
-
-    /* FOOTER */
-    footer {
-      text-align: center;
-      padding: 30px 20px;
-      font-size: 0.9rem;
-      opacity: 0.9;
-    }
-
-    @media (max-width: 768px) {
-      h1 {
-        font-size: 2.4rem;
-      }
-    }
-  </style>
+  <!-- External CSS -->
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
 
@@ -194,16 +65,7 @@
     © 2026 Perth Vending Hub • Neon Vibes • Smart Vending
   </footer>
 
-  <script>
-    // Small JS effect: change coming soon dots
-    const comingSoon = document.querySelector('.coming-soon');
-    let dots = 0;
-
-    setInterval(() => {
-      dots = (dots + 1) % 4;
-      comingSoon.textContent = '🚀 COMING SOON' + '.'.repeat(dots) + ' 🚀';
-    }, 600);
-  </script>
-
+  <!-- External JS -->
+  <script src="script.js"></script>
 </body>
 </html>
