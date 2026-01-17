@@ -83,7 +83,7 @@ const carouselGroups = {
 
 
 
-function initSingleCarousel(cardEl, images, autoPlayMs = 6000) {
+function initSingleCarousel(cardEl, images, autoPlayMs = 3000) {
   if (!cardEl || !images || images.length === 0) return;
 
   const imgEl = cardEl.querySelector(".carousel-image");
@@ -151,5 +151,5 @@ function initSingleCarousel(cardEl, images, autoPlayMs = 6000) {
 // Init all 5
 document.querySelectorAll(".carousel-card").forEach((card) => {
   const key = card.getAttribute("data-carousel");
-  initSingleCarousel(card, carouselGroups[key], 2600);
+  initSingleCarousel(card, carouselGroups[key], 3000);
 });
