@@ -178,6 +178,10 @@ footer {
   display: flex;
   align-items: center;
   justify-content: center;
+  background: #ffffff;
+  border-radius: 18px;
+  overflow: hidden;
+  --padding: 10px;
 }
 
 .carousel-track {
@@ -185,20 +189,20 @@ footer {
   aspect-ratio: 1 / 1; /* square for 2048x2048 style images */
   border-radius: 14px;
   overflow: hidden;
-  background: rgba(0,0,0,0.18);
-  box-shadow: 0 0 18px rgba(0,0,0,0.35);
+  --background: rgba(0,0,0,0.18);
+  --box-shadow: 0 0 18px rgba(0,0,0,0.35);
 }
 
 .carousel-image {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: scale-down;
   object-position: center;
   display: block;
   transition: opacity 0.35s ease-in-out;
 }
 
-/* Buttons overlay */
+/* Buttons overlay (only show on hover) */
 .carousel-btn {
   position: absolute;
   top: 50%;
@@ -211,8 +215,19 @@ footer {
   background: rgba(0,0,0,0.35);
   color: white;
   box-shadow: 0 0 16px rgba(0,0,0,0.35);
-  transition: transform 0.2s, box-shadow 0.2s, background 0.2s;
+  transition: transform 0.2s, box-shadow 0.2s, background 0.2s, opacity 0.2s;
   z-index: 5;
+
+  /* hidden by default */
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* show buttons when hovering the carousel/card */
+.carousel-card:hover .carousel-btn,
+.carousel:hover .carousel-btn {
+  opacity: 1;
+  pointer-events: auto;
 }
 
 .carousel-btn:hover {
@@ -230,6 +245,7 @@ footer {
   display: flex;
   justify-content: center;
   gap: 8px;
+  display: none; /* hide dots */
 }
 
 .carousel-dots button {

@@ -23,12 +23,37 @@ setInterval(() => {
 const carouselGroups = {
   drinks: [
     "carousel_images/drinks/1.png",
-    "carousel_images/drinks/2.png"
-  ],
+    "carousel_images/drinks/2.png",
+    "carousel_images/drinks/3.png",
+    "carousel_images/drinks/4.png",
+    "carousel_images/drinks/5.png",
+    "carousel_images/drinks/6.png",
+    "carousel_images/drinks/7.png",
+    "carousel_images/drinks/8.png",
+    "carousel_images/drinks/9.png",
+    "carousel_images/drinks/10.png",
+    "carousel_images/drinks/11.png",
+    "carousel_images/drinks/12.png",
+    "carousel_images/drinks/13.png",
+    "carousel_images/drinks/14.png",
+    "carousel_images/drinks/15.png",
+    "carousel_images/drinks/16.png",
+    "carousel_images/drinks/17.png",
+    "carousel_images/drinks/18.png",
+  ],  
   snacks: [
     "carousel_images/snacks/1.png",
     "carousel_images/snacks/2.png",
-    "carousel_images/snacks/3.png"
+    "carousel_images/snacks/3.png",
+    "carousel_images/snacks/4.png",
+    "carousel_images/snacks/5.png",
+    "carousel_images/snacks/6.png",
+    "carousel_images/snacks/7.png",
+    "carousel_images/snacks/8.png",
+    "carousel_images/snacks/9.png",
+    "carousel_images/snacks/10.png",
+    "carousel_images/snacks/11.png",
+    "carousel_images/snacks/12.png"
   ],
   icecream: [
     "carousel_images/icecream/1.png",
@@ -42,11 +67,23 @@ const carouselGroups = {
     "carousel_images/gacha/4.png",
     "carousel_images/gacha/5.png",
     "carousel_images/gacha/6.png",
-    "carousel_images/gacha/7.png"
+    "carousel_images/gacha/7.png",
+    "carousel_images/gacha/8.png",
+    "carousel_images/gacha/9.png",
+    "carousel_images/gacha/10.png"
+    
+  ],
+  essentials: [
+    "carousel_images/essentials/1.png",
+    "carousel_images/essentials/2.png",
+    "carousel_images/essentials/3.png"
   ]
 };
 
-function initSingleCarousel(cardEl, images, autoPlayMs = 2800) {
+
+
+
+function initSingleCarousel(cardEl, images, autoPlayMs = 6000) {
   if (!cardEl || !images || images.length === 0) return;
 
   const imgEl = cardEl.querySelector(".carousel-image");
