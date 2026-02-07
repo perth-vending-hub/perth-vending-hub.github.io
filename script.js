@@ -82,13 +82,7 @@ const carouselGroups = {
     "carousel_images/gacha/2.png",
     "carousel_images/gacha/3.png",
     "carousel_images/gacha/4.png",
-    "carousel_images/gacha/5.png",
-    "carousel_images/gacha/6.png",
-    "carousel_images/gacha/7.png",
-    "carousel_images/gacha/8.png",
-    "carousel_images/gacha/9.png",
-    "carousel_images/gacha/10.png"
-    
+    "carousel_images/gacha/5.png"    
   ]
 };
 
