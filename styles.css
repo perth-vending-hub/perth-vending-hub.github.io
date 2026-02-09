@@ -125,13 +125,13 @@ footer {
 
 
 /* =========================
-   PRODUCT CAROUSEL GRID (5 categories)
+   PRODUCT CAROUSEL GRID (6 categories)
 ========================= */
 .product-carousel-grid {
-  max-width: 1100px;
+  max-width: 1320px;
   margin: 0 auto;
   display: grid;
-  grid-template-columns: repeat(5, minmax(180px, 1fr));
+  grid-template-columns: repeat(6, minmax(180px, 1fr));
   gap: 18px;
 }
 
