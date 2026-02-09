@@ -60,23 +60,29 @@ const carouselGroups = {
     "carousel_images/icecream/2.png",
     "carousel_images/icecream/3.png"
   ],
-  gacha: [
-    "carousel_images/gacha/1.png",
-    "carousel_images/gacha/2.png",
-    "carousel_images/gacha/3.png",
-    "carousel_images/gacha/4.png",
-    "carousel_images/gacha/5.png",
-    "carousel_images/gacha/6.png",
-    "carousel_images/gacha/7.png",
-    "carousel_images/gacha/8.png",
-    "carousel_images/gacha/9.png",
-    "carousel_images/gacha/10.png"
-    
+  blindboxes: [  // 👈 CHANGED from "gacha" to match HTML
+    "carousel_images/blindboxes/1.png",
+    "carousel_images/blindboxes/2.png",
+    "carousel_images/blindboxes/3.png",
+    "carousel_images/blindboxes/4.png",
+    "carousel_images/blindboxes/5.png",
+    "carousel_images/blindboxes/6.png",
+    "carousel_images/blindboxes/7.png",
+    "carousel_images/blindboxes/8.png",
+    "carousel_images/blindboxes/9.png",
+    "carousel_images/blindboxes/10.png"
   ],
   essentials: [
     "carousel_images/essentials/1.png",
     "carousel_images/essentials/2.png",
     "carousel_images/essentials/3.png"
+  ],
+  gacha: [
+    "carousel_images/gacha/1.png",
+    "carousel_images/gacha/2.png",
+    "carousel_images/gacha/3.png",
+    "carousel_images/gacha/4.png",
+    "carousel_images/gacha/5.png"    
   ]
 };
 
@@ -148,7 +154,7 @@ function initSingleCarousel(cardEl, images, autoPlayMs = 3000) {
   render();
 }
 
-// Init all 5
+// Init all 6
 document.querySelectorAll(".carousel-card").forEach((card) => {
   const key = card.getAttribute("data-carousel");
   initSingleCarousel(card, carouselGroups[key], 3000);
