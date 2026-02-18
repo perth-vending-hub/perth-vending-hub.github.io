@@ -6,7 +6,7 @@ let dots = 0;
 
 setInterval(() => {
   dots = (dots + 1) % 4;
-  comingSoon.textContent = '🚀 FOLLOW US' + ' >'.repeat(dots) + ' 🚀';
+  comingSoon.textContent = '🚀 FOLLOW US' + ' >'.repeat(dots);
 }, 600);
 
 // =============================
