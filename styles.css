@@ -40,6 +40,9 @@ body {
 .hero-content {
   max-width: 520px;
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .logo {
@@ -281,27 +284,37 @@ footer {
     inset 0 2px 0 rgba(255,255,255,0.6); /* Inner glow */
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
-.follow-container {
+
+/* FOLLOW SECTION WRAPPER */
+.follow-wrapper {
   display: flex;
-  align-items: center;    /* Vertical center alignment */
-  justify-content: center; /* Horizontal centering */
-  gap: 15px;              /* Space between text and IG link */
-  margin-top: 15px;       /* Matches original text spacing */
+  align-items: center;
+  justify-content: space-between; /* Left & Right separation */
+  gap: 30px;
+  margin-top: 25px;
+  width: 100%;
+  max-width: 520px;
 }
 
-.follow-container .coming-soon {
-  margin: 0;              /* Remove original margins */
-  font-size: 2.4rem;      /* Keep original size */
+/* LEFT SIDE */
+.follow-left {
+  flex: 1;
+  text-align: left;
+  min-width: 320px; /* reserves space for animated arrows */
+}
+
+.follow-left .coming-soon {
+  margin: 0;
+  font-size: 2.4rem;
   font-weight: bold;
   color: var(--yellow);
   animation: pulse 2s infinite;
-  order: 1;               /* Text first */
+  white-space: nowrap; /* Prevent shifting */
 }
 
-.follow-container .ig-link {
-  margin: 0;              /* Remove original top margin */
-  order: 2;               /* IG link second */
-  flex-shrink: 0;         /* Prevent IG link from shrinking */
+/* RIGHT SIDE */
+.follow-right {
+  flex-shrink: 0; /* Prevent resizing */
 }
 
 .ig-logo {
