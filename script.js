@@ -6,7 +6,7 @@ let dots = 0;
 
 setInterval(() => {
   dots = (dots + 1) % 4;
-  comingSoon.textContent = '🚀 COMING SOON' + '.'.repeat(dots) + ' 🚀';
+  comingSoon.textContent = 'FOLLOW US' + ' >'.repeat(dots);
 }, 600);
 
 // =============================
@@ -93,8 +93,6 @@ function initSingleCarousel(cardEl, images, autoPlayMs = 3000) {
   if (!cardEl || !images || images.length === 0) return;
 
   const imgEl = cardEl.querySelector(".carousel-image");
-  const prevBtn = cardEl.querySelector(".carousel-btn.prev");
-  const nextBtn = cardEl.querySelector(".carousel-btn.next");
   const dotsContainer = cardEl.querySelector(".carousel-dots");
 
   let currentIndex = 0;
@@ -134,8 +132,6 @@ function initSingleCarousel(cardEl, images, autoPlayMs = 3000) {
     render();
   }
 
-  prevBtn.addEventListener("click", prev);
-  nextBtn.addEventListener("click", next);
 
   // Autoplay + pause on hover
   if (autoPlayMs && autoPlayMs > 0) {

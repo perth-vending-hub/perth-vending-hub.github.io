@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <title>Perth Vending Hub | Coming Soon</title>
@@ -11,129 +12,133 @@
   <!-- External CSS -->
   <link rel="stylesheet" href="styles.css" />
 </head>
+
 <body>
 
   <!-- HERO -->
   <section class="hero">
-    <img src="hero.jpeg" alt="Vending Machine Neon" class="hero-image">
-
-    <div class="hero-content">
-      <img src="logo.png" alt="Perth Vending Hub Logo" class="logo">
-      <img src="name.png" alt="Perth Vending Hub" class="logo">
-      <div class="coming-soon">🚀 COMING SOON 🚀</div>
+  
+    <!-- LEFT SIDE (Girl Image Container) -->
+    <div class="hero-left">
+      <img src="hero.jpeg" alt="Vending Machine Neon" class="hero-image">
     </div>
+  
+    <!-- RIGHT SIDE (Content Container) -->
+    <div class="hero-right">
+      <div class="hero-content">
+  
+        <!-- PVH LOGO CONTAINER -->
+        <div class="logo-container">
+          <img src="logo.png" alt="Perth Vending Hub Logo" class="logo-main">
+          <img src="name.png" alt="Perth Vending Hub" class="logo-name">
+        </div>
+  
+        <!-- FOLLOW SECTION -->
+        <div class="follow-wrapper">
+  
+          <div class="follow-left">
+            <div class="coming-soon">FOLLOW US</div>
+          </div>
+  
+          <div class="follow-right">
+            <a class="ig-link" href="https://www.instagram.com/perthvendinghub/" target="_blank" rel="noopener noreferrer"
+              aria-label="Visit Perth Vending Hub on Instagram">
+              <img src="instagram-logo.png" alt="Instagram Logo" class="ig-logo">
+            </a>
+          </div>
+  
+        </div>
+  
+      </div>
+    </div>
+  
   </section>
 
-<!-- PRODUCTS (replaced with 6 carousels) -->
-<section class="products">
-  <h2>What We’re Stocking</h2>
+  <!-- PRODUCTS (replaced with 6 carousels) -->
+  <section class="products">
+    <h2>What We’re Stocking</h2>
 
-  <div class="product-carousel-grid" aria-label="Product carousels">
+    <div class="product-carousel-grid" aria-label="Product carousels">
 
-    <!-- Snacks -->
-    <div class="carousel-card" data-carousel="snacks">
-      <h3 class="carousel-title">🍫 Snacks</h3>
+      <!-- Snacks -->
+      <div class="carousel-card" data-carousel="snacks">
+        <h3 class="carousel-title">🍫 Snacks</h3>
 
-      <div class="carousel single">
-        <button class="carousel-btn prev" aria-label="Previous">❮</button>
-
-        <div class="carousel-track">
-          <img class="carousel-image" alt="Snacks item" />
+        <div class="carousel single">
+          <div class="carousel-track">
+            <img class="carousel-image" alt="Snacks item" />
+          </div>
         </div>
 
-        <button class="carousel-btn next" aria-label="Next">❯</button>
+        <div class="carousel-dots"></div>
       </div>
 
-      <div class="carousel-dots"></div>
-    </div>
+      <!-- Drinks -->
+      <div class="carousel-card" data-carousel="drinks">
+        <h3 class="carousel-title">🥤 Drinks</h3>
 
-    <!-- Drinks -->
-    <div class="carousel-card" data-carousel="drinks">
-      <h3 class="carousel-title">🥤 Drinks</h3>
-
-      <div class="carousel single">
-        <button class="carousel-btn prev" aria-label="Previous">❮</button>
-
-        <div class="carousel-track">
-          <img class="carousel-image" alt="Drinks item" />
+        <div class="carousel single">
+          <div class="carousel-track">
+            <img class="carousel-image" alt="Drinks item" />
+          </div>
         </div>
 
-        <button class="carousel-btn next" aria-label="Next">❯</button>
+        <div class="carousel-dots"></div>
       </div>
 
-      <div class="carousel-dots"></div>
-    </div>
+      <!-- Ice Cream -->
+      <div class="carousel-card" data-carousel="icecream">
+        <h3 class="carousel-title">🍦 Ice Cream</h3>
 
-    <!-- Ice Cream -->
-    <div class="carousel-card" data-carousel="icecream">
-      <h3 class="carousel-title">🍦 Ice Cream</h3>
-
-      <div class="carousel single">
-        <button class="carousel-btn prev" aria-label="Previous">❮</button>
-
-        <div class="carousel-track">
-          <img class="carousel-image" alt="Ice cream item" />
+        <div class="carousel single">
+          <div class="carousel-track">
+            <img class="carousel-image" alt="Ice cream item" />
+          </div>
         </div>
 
-        <button class="carousel-btn next" aria-label="Next">❯</button>
+        <div class="carousel-dots"></div>
       </div>
 
-      <div class="carousel-dots"></div>
-    </div>
+      <!-- Blind Boxes -->
+      <div class="carousel-card" data-carousel="blindboxes">
+        <h3 class="carousel-title">🎲 Blind Boxes</h3>
 
-    <!-- Blind Boxes -->
-    <div class="carousel-card" data-carousel="blindboxes">
-      <h3 class="carousel-title">🎲 Blind Boxes</h3>
-
-      <div class="carousel single">
-        <button class="carousel-btn prev" aria-label="Previous">❮</button>
-
-        <div class="carousel-track">
-          <img class="carousel-image" alt="Blind Box item" />
+        <div class="carousel single">
+          <div class="carousel-track">
+            <img class="carousel-image" alt="Blind Box item" />
+          </div>
         </div>
 
-        <button class="carousel-btn next" aria-label="Next">❯</button>
+        <div class="carousel-dots"></div>
       </div>
 
-      <div class="carousel-dots"></div>
-    </div>
+      <!-- Daily Essentials -->
+      <div class="carousel-card" data-carousel="essentials">
+        <h3 class="carousel-title">🧼 Essentials</h3>
 
-    <!-- Daily Essentials -->
-    <div class="carousel-card" data-carousel="essentials">
-      <h3 class="carousel-title">🧼 Essentials</h3>
-
-      <div class="carousel single">
-        <button class="carousel-btn prev" aria-label="Previous">❮</button>
-
-        <div class="carousel-track">
-          <img class="carousel-image" alt="Daily essentials item" />
+        <div class="carousel single">
+          <div class="carousel-track">
+            <img class="carousel-image" alt="Daily essentials item" />
+          </div>
         </div>
 
-        <button class="carousel-btn next" aria-label="Next">❯</button>
+        <div class="carousel-dots"></div>
       </div>
 
-      <div class="carousel-dots"></div>
-    </div>
+      <!-- Gacha -->
+      <div class="carousel-card" data-carousel="gacha">
+        <h3 class="carousel-title">🧸 Gacha</h3>
 
-    <!-- Gacha -->
-    <div class="carousel-card" data-carousel="gacha">
-      <h3 class="carousel-title">🧸 Gacha</h3>
-
-      <div class="carousel single">
-        <button class="carousel-btn prev" aria-label="Previous">❮</button>
-
-        <div class="carousel-track">
-          <img class="carousel-image" alt="Gacha item" />
+        <div class="carousel single">
+          <div class="carousel-track">
+            <img class="carousel-image" alt="Gacha item" />
+          </div>
         </div>
-
-        <button class="carousel-btn next" aria-label="Next">❯</button>
+        <div class="carousel-dots"></div>
       </div>
 
-      <div class="carousel-dots"></div>
     </div>
-
-  </div>
-</section>
+  </section>
 
 
   <!-- FOOTER -->
@@ -144,4 +149,5 @@
   <!-- External JS -->
   <script src="script.js"></script>
 </body>
+
 </html>

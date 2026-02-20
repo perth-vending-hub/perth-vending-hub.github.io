@@ -20,31 +20,66 @@ body {
   overflow-x: hidden;
 }
 
-/* HERO */
+/* =========================
+   HERO LAYOUT (Locked 2 Columns)
+========================= */
+
 .hero {
   display: flex;
-  flex-wrap: wrap;
   align-items: center;
   justify-content: center;
   padding: 80px 20px;
-  gap: 40px;
+  gap: 60px;
+  flex-wrap: wrap;
 }
 
-.hero img.hero-image {
-  max-width: 380px;
+/* LEFT SIDE */
+.hero-left {
+  flex: 0 0 380px; /* fixed width container */
+  display: flex;
+  justify-content: center;
+}
+
+.hero-image {
   width: 100%;
+  max-width: 380px;
   border-radius: 18px;
-  box-shadow: 0 0 40px rgba(255, 255, 255, 0.4);
+  box-shadow: 0 0 40px rgba(255,255,255,0.4);
+}
+
+/* RIGHT SIDE */
+.hero-right {
+  flex: 0 0 520px; /* fixed width container */
+  display: flex;
+  justify-content: center;
 }
 
 .hero-content {
-  max-width: 520px;
-  text-align: center;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-.logo {
-  width: 50%;
-  margin-bottom: 20px;
+/* =========================
+   PVH LOGO CONTAINER
+========================= */
+.logo-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 40px; /* Creates separation from Follow section */
+}
+
+.logo-main {
+  width: 220px;
+  max-width: 70%;
+}
+
+.logo-name {
+  width: 300px;
+  max-width: 85%;
 }
 
 h1 {
@@ -125,13 +160,13 @@ footer {
 
 
 /* =========================
-   PRODUCT CAROUSEL GRID (5 categories)
+   PRODUCT CAROUSEL GRID (6 categories)
 ========================= */
 .product-carousel-grid {
-  max-width: 1100px;
+  max-width: 1320px;
   margin: 0 auto;
   display: grid;
-  grid-template-columns: repeat(5, minmax(180px, 1fr));
+  grid-template-columns: repeat(6, minmax(180px, 1fr));
   gap: 18px;
 }
 
@@ -261,4 +296,100 @@ footer {
 .carousel-dots button.active {
   background: var(--cyan);
   transform: scale(1.2);
+}
+
+/* Instagram icon under Follow Us */
+.ig-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 20px;
+  text-decoration: none;
+  width: 80px;  /* Square dimensions */
+  height: 80px; /* Square dimensions */
+  border-radius: 16px;  /* Rounded corners, NOT 50% (circular) */
+  background: white;
+  padding: 8px;
+  border: 2px solid rgba(255,255,255,0.9); /* White border */
+  box-shadow: 
+    0 8px 32px rgba(0,0,0,0.3),
+    inset 0 2px 0 rgba(255,255,255,0.6); /* Inner glow */
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* FOLLOW SECTION WRAPPER */
+.follow-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center; /* centers FOLLOW US block */
+  margin-top: 25px;
+  width: 100%;
+  max-width: 520px;
+}
+
+/* LEFT SIDE */
+.follow-left {
+  flex: none;  
+  text-align: center;
+  min-width: 320px; /* reserves space for animated arrows */
+}
+
+.follow-left .coming-soon {
+  margin: 0;
+  font-size: 2.4rem;
+  font-weight: bold;
+  color: var(--yellow);
+  animation: pulse 2s infinite;
+  white-space: nowrap; /* Prevent shifting */
+}
+
+/* RIGHT SIDE */
+.follow-right {
+  position: absolute;
+  right: -30px; /* Shift right to create separation from text */
+}
+
+.ig-logo {
+  width: 64px;
+  height: 64px;
+  border-radius: 12px;  /* Slightly rounded logo to match container */
+  object-fit: contain;
+  transition: transform 0.3s ease;
+}
+
+.ig-link:hover {
+  transform: translateY(-4px) scale(1.08);
+  box-shadow: 
+    0 16px 48px rgba(0,0,0,0.4),
+    0 0 0 2px rgba(255,255,255,1),
+    inset 0 2px 0 rgba(255,255,255,0.8);
+}
+
+.ig-link:hover .ig-logo {
+  transform: scale(1.05);
+}
+
+/* Mobile Layout */
+@media (max-width: 768px) {
+  .hero {
+    flex-direction: column;
+    gap: 40px;
+  }
+  
+  .hero-left, .hero-right {
+    flex: none;
+    width: 100%;
+    max-width: 400px;
+  }
+  
+  .follow-wrapper {
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  .follow-right {
+    position: static; /* Stack below text */
+    transform: none; /* Reset any positioning */
+  }
 }
