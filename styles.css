@@ -20,34 +20,66 @@ body {
   overflow-x: hidden;
 }
 
-/* HERO */
+/* =========================
+   HERO LAYOUT (Locked 2 Columns)
+========================= */
+
 .hero {
   display: flex;
-  flex-wrap: wrap;
   align-items: center;
   justify-content: center;
   padding: 80px 20px;
-  gap: 40px;
+  gap: 60px;
+  flex-wrap: wrap;
 }
 
-.hero img.hero-image {
-  max-width: 380px;
+/* LEFT SIDE */
+.hero-left {
+  flex: 0 0 380px; /* fixed width container */
+  display: flex;
+  justify-content: center;
+}
+
+.hero-image {
   width: 100%;
+  max-width: 380px;
   border-radius: 18px;
-  box-shadow: 0 0 40px rgba(255, 255, 255, 0.4);
+  box-shadow: 0 0 40px rgba(255,255,255,0.4);
+}
+
+/* RIGHT SIDE */
+.hero-right {
+  flex: 0 0 520px; /* fixed width container */
+  display: flex;
+  justify-content: center;
 }
 
 .hero-content {
-  max-width: 520px;
-  text-align: center;
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-.logo { /* PVH LOGO */
-  width: 75%;
-  margin-bottom: 20px;
+/* =========================
+   PVH LOGO CONTAINER
+========================= */
+.logo-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 40px; /* Creates separation from Follow section */
+}
+
+.logo-main {
+  width: 220px;
+  max-width: 70%;
+}
+
+.logo-name {
+  width: 300px;
+  max-width: 85%;
 }
 
 h1 {
@@ -287,10 +319,10 @@ footer {
 
 /* FOLLOW SECTION WRAPPER */
 .follow-wrapper {
+  position: relative;
   display: flex;
   align-items: center;
-  justify-content: space-between; /* Left & Right separation */
-  gap: 30px;
+  justify-content: center; /* centers FOLLOW US block */
   margin-top: 25px;
   width: 100%;
   max-width: 520px;
@@ -298,8 +330,8 @@ footer {
 
 /* LEFT SIDE */
 .follow-left {
-  flex: 1;
-  text-align: left;
+  flex: none;  
+  text-align: center;
   min-width: 320px; /* reserves space for animated arrows */
 }
 
@@ -314,7 +346,8 @@ footer {
 
 /* RIGHT SIDE */
 .follow-right {
-  flex-shrink: 0; /* Prevent resizing */
+  position: absolute;
+  right: -30px; /* Shift right to create separation from text */
 }
 
 .ig-logo {
@@ -335,4 +368,28 @@ footer {
 
 .ig-link:hover .ig-logo {
   transform: scale(1.05);
+}
+
+/* Mobile Layout */
+@media (max-width: 768px) {
+  .hero {
+    flex-direction: column;
+    gap: 40px;
+  }
+  
+  .hero-left, .hero-right {
+    flex: none;
+    width: 100%;
+    max-width: 400px;
+  }
+  
+  .follow-wrapper {
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  .follow-right {
+    position: static; /* Stack below text */
+    transform: none; /* Reset any positioning */
+  }
 }
