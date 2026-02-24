@@ -21,6 +21,62 @@ body {
 }
 
 /* =========================
+   NAVBAR
+========================= */
+
+.navbar {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  background: rgba(0,0,0,0.6);
+  backdrop-filter: blur(10px);
+  z-index: 1000;
+  padding: 16px 30px;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+.nav-container {
+  max-width: 1300px;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.nav-logo {
+  font-size: 1.1rem;
+  letter-spacing: 2px;
+  color: var(--yellow);
+  text-shadow: 0 0 10px var(--pink);
+}
+
+.nav-links {
+  display: flex;
+  gap: 28px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: white;
+  font-size: 0.9rem;
+  letter-spacing: 1px;
+  transition: 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: var(--cyan);
+  text-shadow: 0 0 12px var(--cyan);
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .nav-links {
+    gap: 18px;
+    font-size: 0.8rem;
+  }
+}
+
+/* =========================
    HERO LAYOUT (Locked 2 Columns)
 ========================= */
 
@@ -392,4 +448,56 @@ footer {
     position: static; /* Stack below text */
     transform: none; /* Reset any positioning */
   }
+}
+
+/* =========================
+   INFO PAGES (Collab + Invest)
+========================= */
+
+.info-page {
+  max-width: 900px;
+  margin: 100px auto;
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.info-page h1 {
+  font-size: 2.5rem;
+  margin-bottom: 30px;
+  text-shadow: 0 0 20px var(--cyan);
+}
+
+.info-page p {
+  margin-bottom: 20px;
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+.info-box {
+  margin: 40px 0;
+  padding: 30px;
+  border-radius: 18px;
+  background: rgba(255,255,255,0.08);
+  backdrop-filter: blur(8px);
+  box-shadow: 0 0 25px rgba(0,0,0,0.3);
+}
+
+.info-box h2 {
+  margin-bottom: 20px;
+  color: var(--yellow);
+}
+
+.info-box ul {
+  list-style: none;
+  padding: 0;
+}
+
+.info-box li {
+  margin: 10px 0;
+}
+
+.cta {
+  margin-top: 40px;
+  font-size: 1.2rem;
+  color: var(--cyan);
 }
